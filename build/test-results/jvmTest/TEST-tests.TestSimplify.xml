@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestSimplify" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-09T16:04:55" hostname="MacBook-Pro-tikhon.local" time="0.025">
+  <properties/>
+  <testcase name="testCombine()[jvm]" classname="tests.TestSimplify" time="0.025"/>
+  <system-out><![CDATA[[0, 0, 1]
+[0, 1, 0]
+[0, 0, 1]
+[0, 1, 0]
+[1, 0, 0]
+[1, 0, 0]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

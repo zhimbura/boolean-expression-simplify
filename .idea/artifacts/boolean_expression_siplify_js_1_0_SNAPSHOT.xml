@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="boolean-expression-siplify-js-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="boolean-expression-siplify-js-1.0-SNAPSHOT.jar">
+      <element id="module-output" name="boolean-expression-siplify.jsMain" />
+    </root>
+  </artifact>
+</component>
