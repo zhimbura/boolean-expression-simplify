@@ -6,8 +6,9 @@ abstract class AbstractCondition(vararg conditions: Any)  {
         else Condition(it)
     }
 
-    internal abstract fun getAllCandidates(): Iterable<Condition>
+    internal abstract fun getAllCandidates(): List<Condition>
     internal abstract fun isSatisfied(): Boolean
+    internal abstract fun setValue(condition: Condition, value: Boolean)
 
     abstract override fun toString(): String
 
