@@ -7,6 +7,8 @@
 import expressions.SimplerBooleanExpression
 import expressions.dto.*
 
+val simpler = SimplerBooleanExpression()
+
 // A && (B || A) -> A
 val condition = AndCondition(
     "A",
@@ -16,7 +18,7 @@ val condition = AndCondition(
     )
 )
 println(condition) // A && (B || A)
-val simpler = SimplerBooleanExpression()
+// Оптимизируем
 val simpled = simpler.simplify(condition)
 println(simpled) // A
 
@@ -28,6 +30,7 @@ val condition2 = Condition("A").and(
     )
 )
 println(condition2) // A && (B || A)
+// Оптимизируем
 val simpled2 = simpler.simplify(condition2)
 println(simpled2) // A
 
