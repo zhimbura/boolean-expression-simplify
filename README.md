@@ -28,7 +28,8 @@ val condition2 = Condition("A").and(
     )
 )
 println(condition2) // A && (B || A)
-
+val simpled2 = simpler.simplify(condition2)
+println(simpled2) // A
 
 ```
 
