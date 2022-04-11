@@ -24,7 +24,7 @@ println(simpled) // A
 // Или можно создать вызовами методов
 val condition2 = Condition("A").and(
     Condition("B").or(
-        Condition("C")
+        Condition("A")
     )
 )
 println(condition2) // A && (B || A)
