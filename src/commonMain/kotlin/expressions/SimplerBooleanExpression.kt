@@ -105,11 +105,13 @@ class SimplerBooleanExpression {
         return result
     }
 
-    private fun getTrueCandidates(booleanResult: List<Int>, allCandidates: List<Condition>): List<Condition> {
-        val result: ArrayList<Condition> = arrayListOf()
+    private fun getTrueCandidates(booleanResult: List<Int>, allCandidates: List<Condition>): List<AbstractCondition> {
+        val result: ArrayList<AbstractCondition> = arrayListOf()
         for (i in booleanResult.indices) {
             if (booleanResult[i] == 1) {
                 result.add(allCandidates[i])
+            } else if (booleanResult[i] == 0) {
+                result.add(allCandidates[i].not())
             }
         }
         return result
