@@ -1,26 +1,23 @@
 package expressions.dto
 
-abstract class AbstractCondition(vararg conditions: Any)  {
-    protected val conditions: List<AbstractCondition> = conditions.map {
-        if (it is AbstractCondition) it
-        else Condition(it)
-    }
+abstract class AbstractCondition<T>(vararg conditions: AbstractCondition<T>)  {
+    protected val conditions: List<AbstractCondition<T>> = conditions.toList()
 
-    internal abstract fun getAllCandidates(): List<Condition>
+    internal abstract fun getAllCandidates(): List<Condition<T>>
     internal abstract fun isSatisfied(): Boolean
-    internal abstract fun setValue(condition: Condition, value: Boolean)
+    internal abstract fun setValue(condition: Condition<T>, value: Boolean)
 
     abstract override fun toString(): String
 
-    fun or(conditions: AbstractCondition): OrCondition {
+    fun or(conditions: AbstractCondition<T>): OrCondition<T> {
         return OrCondition(this, conditions)
     }
 
-    fun and(conditions: AbstractCondition) : AndCondition {
+    fun and(conditions: AbstractCondition<T>) : AndCondition<T> {
         return AndCondition(this, conditions)
     }
 
-    fun not(): NotCondition {
+    fun not(): NotCondition<T> {
         return NotCondition(this)
     }
 }

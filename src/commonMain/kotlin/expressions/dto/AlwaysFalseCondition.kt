@@ -1,11 +1,11 @@
 package expressions.dto
 
-class AlwaysFalseCondition: AbstractCondition() {
-    override fun getAllCandidates() = emptyList<Condition>()
+class AlwaysFalseCondition<T>: AbstractCondition<T>() {
+    override fun getAllCandidates() = emptyList<Condition<T>>()
 
     override fun isSatisfied() = false
 
-    override fun setValue(condition: Condition, value: Boolean) {
+    override fun setValue(condition: Condition<T>, value: Boolean) {
         throw Exception("Can't set value for const condition")
     }
 

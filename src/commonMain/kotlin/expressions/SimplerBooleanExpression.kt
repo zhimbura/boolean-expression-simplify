@@ -5,7 +5,7 @@ import kotlin.math.pow
 
 class SimplerBooleanExpression {
 
-    fun simplify(condition: AbstractCondition): AbstractCondition? {
+    fun <T> simplify(condition: AbstractCondition<T>): AbstractCondition<T>? {
         val uniqCandidates = condition.getAllCandidates().toSet().toList()
         if (uniqCandidates.isEmpty()) {
             return null
@@ -88,14 +88,14 @@ class SimplerBooleanExpression {
         }
     }
 
-    private fun transformToCondition(
+    private fun <T>transformToCondition(
         firstGroup: Iterable<List<Int>>,
-        uniqCandidates: List<Condition>
-    ): AbstractCondition? {
-        var result: AbstractCondition? = null
+        uniqCandidates: List<Condition<T>>
+    ): AbstractCondition<T>? {
+        var result: AbstractCondition<T>? = null
         for (row in firstGroup) {
             val candidates = getTrueCandidates(row, uniqCandidates)
-            val andCondition = if (candidates.size == 1) {
+            val andCondition: AbstractCondition<T> = if (candidates.size == 1) {
                 candidates.first()
             } else {
                 AndCondition(*candidates.toTypedArray())
@@ -105,8 +105,8 @@ class SimplerBooleanExpression {
         return result
     }
 
-    private fun getTrueCandidates(booleanResult: List<Int>, allCandidates: List<Condition>): List<AbstractCondition> {
-        val result: ArrayList<AbstractCondition> = arrayListOf()
+    private fun <T>getTrueCandidates(booleanResult: List<Int>, allCandidates: List<Condition<T>>): List<AbstractCondition<T>> {
+        val result: ArrayList<AbstractCondition<T>> = arrayListOf()
         for (i in booleanResult.indices) {
             if (booleanResult[i] == 1) {
                 result.add(allCandidates[i])
@@ -136,7 +136,7 @@ class SimplerBooleanExpression {
         return ArrayList(inputFirst).also { it[diffIndex] = 2 }
     }
 
-    fun getBooleanTable(condition: AbstractCondition, conditions: List<Condition>): MutableMap<List<Int>, Int> {
+    fun <T>getBooleanTable(condition: AbstractCondition<T>, conditions: List<Condition<T>>): MutableMap<List<Int>, Int> {
         val countRows = 2.0.pow(conditions.size).toInt() - 1
         val table: MutableMap<List<Int>, Int> = mutableMapOf()
         for (i in 0..countRows) {

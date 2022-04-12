@@ -10,10 +10,10 @@ class TestSimplify {
     fun testSimplifyNothing() {
         // A && (B || C) -> A && (B || C)
         val condition = AndCondition(
-            "A",
+            Condition("A"),
             OrCondition(
-                "B",
-                "C"
+                Condition("B"),
+                Condition("C"),
             )
         )
         val simpler = SimplerBooleanExpression()
@@ -25,10 +25,10 @@ class TestSimplify {
     fun testSimplifyCase1() {
         // A && (B || A) -> A
         val condition = AndCondition(
-            "A",
+            Condition("A"),
             OrCondition(
-                "B",
-                "A"
+                Condition("B"),
+                Condition("A"),
             )
         )
         val simpler = SimplerBooleanExpression()
@@ -42,8 +42,8 @@ class TestSimplify {
     fun testSimplifyCase2() {
         // A && A -> A
         val condition = AndCondition(
-            "A",
-            "A"
+            Condition("A"),
+            Condition("A"),
         )
         val simpler = SimplerBooleanExpression()
         val simpled = simpler.simplify(condition)
@@ -56,8 +56,8 @@ class TestSimplify {
     fun testSimplifyCase3() {
         // A && !A -> null
         val condition = AndCondition(
-            "A",
-            NotCondition("A")
+            Condition("A"),
+            NotCondition(Condition("A"))
         )
         val simpler = SimplerBooleanExpression()
         val simpled = simpler.simplify(condition)
@@ -69,8 +69,8 @@ class TestSimplify {
     fun testSimplifyCase4() {
         // A || !A -> true
         val condition = OrCondition(
-            "A",
-            NotCondition("A")
+            Condition("A"),
+            NotCondition(Condition("A"))
         )
         val simpler = SimplerBooleanExpression()
         val simpled = simpler.simplify(condition)
@@ -78,17 +78,14 @@ class TestSimplify {
         assertTrue(simpled is AlwaysTrueCondition)
     }
 
-
-
-
     @Test
     fun testBooleanTable() {
         // A && (B || C)
         val condition = AndCondition(
-            "A",
+            Condition("A"),
             OrCondition(
-                "B",
-                "C"
+                Condition("B"),
+                Condition("C")
             )
         )
         val conditions = condition.getAllCandidates()

@@ -3,6 +3,7 @@
 Мультиплатформенная библиотека позволяющая оптимизировать логические выражения
 
 Пример использования
+
 ```kotlin
 import expressions.SimplerBooleanExpression
 import expressions.dto.*
@@ -11,10 +12,10 @@ val simpler = SimplerBooleanExpression()
 
 // A && (B || A) -> A
 val condition = AndCondition(
-    "A",
+    Condition("A"),
     OrCondition(
-        "B",
-        "A"
+        Condition("B"),
+        Condition("A")
     )
 )
 println(condition) // A && (B || A)
@@ -35,7 +36,6 @@ val simpled2 = simpler.simplify(condition2)
 println(simpled2) // A
 
 ```
-
 
 TODO: Опубликовать в Maven и NPM
 
