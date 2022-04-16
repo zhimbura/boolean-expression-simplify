@@ -1,12 +1,14 @@
 # boolean-expression-siplify
 
-Мультиплатформенная библиотека позволяющая оптимизировать логические выражения
+Мультиплатформенная библиотека позволяющая оптимизировать логические выражения.
 
-Пример использования
+Вы можете использовать готовые классы для оптимизации выражений либо реализовать интерфейс [SimplifiedCondition](src/commonMain/kotlin/org/expressions/SimplifiedCondition.kt) и передавать свои классы для упрощения условий.
+
+Пример использования:
 
 ```kotlin
 import expressions.SimplerBooleanExpression
-import expressions.dto.*
+import expressions.impl.*
 
 val simpler = SimplerBooleanExpression()
 
@@ -37,12 +39,14 @@ println(simpled2) // A
 
 ```
 
+TODO: Добавить пример с имплементацией
+
 TODO: Опубликовать в Maven и NPM
 
-TODO: Причесать код
+TODO: Сделать документацию и опубликовать в pages с рабочим примером на js
 
 TODO: Перевести на английский
 
-TODO: Переделать на Generic возможно
+TODO: Добавить возможность сериализовать (не уверен что нужно)
 
-TODO: Добавить возможность сериализовать
+TODO: Однако generic не нужен 

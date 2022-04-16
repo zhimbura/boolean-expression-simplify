@@ -1,12 +1,14 @@
-package expressions.dto
+package org.expressions.impl
 
-class Condition<T>(val item: T) : AbstractCondition<T>() {
+import org.expressions.SimplifiedCondition
+
+open class Condition<T>(val item: T) : AbstractCondition<T>() {
     private var value: Boolean = false
 
     override fun getAllCandidates() = listOf(this)
 
-    override fun isSatisfied() = value
-    override fun setValue(condition: Condition<T>, value: Boolean) {
+    override fun isSatisfiedByValue() = value
+    override fun setValue(condition: SimplifiedCondition<T>, value: Boolean) {
         if (this == condition) {
             this.value = value
         }

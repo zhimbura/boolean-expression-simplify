@@ -1,11 +1,13 @@
-package expressions.dto
+package org.expressions.impl
 
-class NotCondition<T>(vararg conditions: AbstractCondition<T>) : AbstractCondition<T>(*conditions) {
+import org.expressions.SimplifiedCondition
+
+class NotCondition<T>(vararg conditions: SimplifiedCondition<T>) : AbstractCondition<T>(*conditions) {
 
     override fun getAllCandidates() = conditions.flatMap { it.getAllCandidates() }
 
-    override fun isSatisfied() = !this.conditions.any { it.isSatisfied() }
-    override fun setValue(condition: Condition<T>, value: Boolean) {
+    override fun isSatisfiedByValue() = !this.conditions.any { it.isSatisfiedByValue() }
+    override fun setValue(condition: SimplifiedCondition<T>, value: Boolean) {
         for (c in conditions) {
             c.setValue(condition, value)
         }

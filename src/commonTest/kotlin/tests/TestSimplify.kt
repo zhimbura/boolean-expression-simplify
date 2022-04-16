@@ -1,7 +1,7 @@
 package tests
 
-import expressions.SimplerBooleanExpression
-import expressions.dto.*
+import org.expressions.SimplerBooleanExpression
+import org.expressions.impl.*
 import kotlin.test.*
 
 class TestSimplify {
