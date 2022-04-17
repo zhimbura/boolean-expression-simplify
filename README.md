@@ -63,6 +63,8 @@ fun main() {
 
 If you want to use custom conditions, you need implement interface [SimplifiedCondition,](src/commonMain/kotlin/org/expressions/SimplifiedCondition.kt) and then you could use [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) similarly first code examples.
 
+---
+
 ### Build
 
 #### Build JVM
@@ -83,6 +85,8 @@ Then go to `build/libs` for take *.jar
 
 // TODO add implements with using macOS
 
+---
+
 ### Test
 
 Run tests and generate coverage.
@@ -90,6 +94,8 @@ Run tests and generate coverage.
 ```bash
 ./gradlew koverReport
 ```
+
+---
 
 ### Documentation
 
@@ -117,6 +123,7 @@ If you want Markdown documentation
 
 Then go to `build/dokka/gfm/index.md`
 
+---
 
 ### TODO
 
