@@ -91,6 +91,8 @@ Run tests and generate coverage.
 ./gradlew koverReport
 ```
 
+### Documentation
+
 #### HTML
 
 Watch coverage go to `build/reports/kover/html/index.html`
