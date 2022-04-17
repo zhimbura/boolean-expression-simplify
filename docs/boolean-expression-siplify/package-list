@@ -1,0 +1,63 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:org.expressions.impl////PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/index.html
+$dokka.location:org.expressions.impl/AbstractCondition///PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-abstract-condition/index.html
+$dokka.location:org.expressions.impl/AbstractCondition/AbstractCondition/#kotlin.Array[org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-abstract-condition/-abstract-condition.html
+$dokka.location:org.expressions.impl/AbstractCondition/and/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-abstract-condition/and.html
+$dokka.location:org.expressions.impl/AbstractCondition/not/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-abstract-condition/not.html
+$dokka.location:org.expressions.impl/AbstractCondition/or/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-abstract-condition/or.html
+$dokka.location:org.expressions.impl/AbstractCondition/toString/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-abstract-condition/to-string.html
+$dokka.location:org.expressions.impl/AlwaysFalseCondition///PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-false-condition/index.html
+$dokka.location:org.expressions.impl/AlwaysFalseCondition/AlwaysFalseCondition/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-false-condition/-always-false-condition.html
+$dokka.location:org.expressions.impl/AlwaysFalseCondition/getAllCandidates/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-false-condition/get-all-candidates.html
+$dokka.location:org.expressions.impl/AlwaysFalseCondition/isSatisfiedByValue/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-false-condition/is-satisfied-by-value.html
+$dokka.location:org.expressions.impl/AlwaysFalseCondition/setValue/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.Boolean/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-false-condition/set-value.html
+$dokka.location:org.expressions.impl/AlwaysFalseCondition/toString/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-false-condition/to-string.html
+$dokka.location:org.expressions.impl/AlwaysTrueCondition///PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-true-condition/index.html
+$dokka.location:org.expressions.impl/AlwaysTrueCondition/AlwaysTrueCondition/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-true-condition/-always-true-condition.html
+$dokka.location:org.expressions.impl/AlwaysTrueCondition/getAllCandidates/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-true-condition/get-all-candidates.html
+$dokka.location:org.expressions.impl/AlwaysTrueCondition/isSatisfiedByValue/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-true-condition/is-satisfied-by-value.html
+$dokka.location:org.expressions.impl/AlwaysTrueCondition/setValue/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.Boolean/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-true-condition/set-value.html
+$dokka.location:org.expressions.impl/AlwaysTrueCondition/toString/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-always-true-condition/to-string.html
+$dokka.location:org.expressions.impl/AndCondition///PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-and-condition/index.html
+$dokka.location:org.expressions.impl/AndCondition/AndCondition/#kotlin.Array[org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-and-condition/-and-condition.html
+$dokka.location:org.expressions.impl/AndCondition/getAllCandidates/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-and-condition/get-all-candidates.html
+$dokka.location:org.expressions.impl/AndCondition/isSatisfiedByValue/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-and-condition/is-satisfied-by-value.html
+$dokka.location:org.expressions.impl/AndCondition/setValue/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.Boolean/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-and-condition/set-value.html
+$dokka.location:org.expressions.impl/AndCondition/toString/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-and-condition/to-string.html
+$dokka.location:org.expressions.impl/Condition///PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/index.html
+$dokka.location:org.expressions.impl/Condition/Condition/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/-condition.html
+$dokka.location:org.expressions.impl/Condition/equals/#kotlin.Any?/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/equals.html
+$dokka.location:org.expressions.impl/Condition/getAllCandidates/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/get-all-candidates.html
+$dokka.location:org.expressions.impl/Condition/hashCode/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/hash-code.html
+$dokka.location:org.expressions.impl/Condition/isSatisfiedByValue/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/is-satisfied-by-value.html
+$dokka.location:org.expressions.impl/Condition/item/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/item.html
+$dokka.location:org.expressions.impl/Condition/setValue/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.Boolean/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/set-value.html
+$dokka.location:org.expressions.impl/Condition/toString/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-condition/to-string.html
+$dokka.location:org.expressions.impl/NotCondition///PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-not-condition/index.html
+$dokka.location:org.expressions.impl/NotCondition/NotCondition/#kotlin.Array[org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-not-condition/-not-condition.html
+$dokka.location:org.expressions.impl/NotCondition/getAllCandidates/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-not-condition/get-all-candidates.html
+$dokka.location:org.expressions.impl/NotCondition/isSatisfiedByValue/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-not-condition/is-satisfied-by-value.html
+$dokka.location:org.expressions.impl/NotCondition/setValue/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.Boolean/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-not-condition/set-value.html
+$dokka.location:org.expressions.impl/NotCondition/toString/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-not-condition/to-string.html
+$dokka.location:org.expressions.impl/OrCondition///PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-or-condition/index.html
+$dokka.location:org.expressions.impl/OrCondition/OrCondition/#kotlin.Array[org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-or-condition/-or-condition.html
+$dokka.location:org.expressions.impl/OrCondition/getAllCandidates/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-or-condition/get-all-candidates.html
+$dokka.location:org.expressions.impl/OrCondition/isSatisfiedByValue/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-or-condition/is-satisfied-by-value.html
+$dokka.location:org.expressions.impl/OrCondition/setValue/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.Boolean/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-or-condition/set-value.html
+$dokka.location:org.expressions.impl/OrCondition/toString/#/PointingToDeclaration/boolean-expression-siplify/org.expressions.impl/-or-condition/to-string.html
+$dokka.location:org.expressions////PointingToDeclaration/boolean-expression-siplify/org.expressions/index.html
+$dokka.location:org.expressions/SimplerBooleanExpression///PointingToDeclaration/boolean-expression-siplify/org.expressions/-simpler-boolean-expression/index.html
+$dokka.location:org.expressions/SimplerBooleanExpression/SimplerBooleanExpression/#/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simpler-boolean-expression/-simpler-boolean-expression.html
+$dokka.location:org.expressions/SimplerBooleanExpression/getBooleanTable/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.collections.List[org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]]/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simpler-boolean-expression/get-boolean-table.html
+$dokka.location:org.expressions/SimplerBooleanExpression/simplify/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simpler-boolean-expression/simplify.html
+$dokka.location:org.expressions/SimplifiedCondition///PointingToDeclaration/boolean-expression-siplify/org.expressions/-simplified-condition/index.html
+$dokka.location:org.expressions/SimplifiedCondition/and/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simplified-condition/and.html
+$dokka.location:org.expressions/SimplifiedCondition/getAllCandidates/#/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simplified-condition/get-all-candidates.html
+$dokka.location:org.expressions/SimplifiedCondition/isSatisfiedByValue/#/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simplified-condition/is-satisfied-by-value.html
+$dokka.location:org.expressions/SimplifiedCondition/not/#/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simplified-condition/not.html
+$dokka.location:org.expressions/SimplifiedCondition/or/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simplified-condition/or.html
+$dokka.location:org.expressions/SimplifiedCondition/setValue/#org.expressions.SimplifiedCondition[TypeParam(bounds=[kotlin.Any?])]#kotlin.Boolean/PointingToDeclaration/boolean-expression-siplify/org.expressions/-simplified-condition/set-value.html
+org.expressions
+org.expressions.impl
+
