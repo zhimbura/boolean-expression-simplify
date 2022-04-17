@@ -1,52 +1,71 @@
-# boolean-expression-siplify
+# Minimizer of Boolean Algebra Functions
 
-Мультиплатформенная библиотека позволяющая оптимизировать логические выражения.
+## Description
 
-Вы можете использовать готовые классы для оптимизации выражений либо реализовать интерфейс [SimplifiedCondition](src/commonMain/kotlin/org/expressions/SimplifiedCondition.kt) и передавать свои классы для упрощения условий.
+Multiplatform library witch can make the expression easier. This library can be used on JVM, JS, Swift.
 
-Пример использования:
+## How use it
+
+### Classes 
+
+You can use exist classes in  [org.expressions.impl](src/commonMain/kotlin/org/expressions/impl) for create condition and [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) for doing simle your condition.
+
+For example with using constructor:
 
 ```kotlin
-import expressions.SimplerBooleanExpression
-import expressions.impl.*
-
-val simpler = SimplerBooleanExpression()
+import org.expressions.SimplerBooleanExpression
+import org.expressions.impl.*
 
 // A && (B || A) -> A
-val condition = AndCondition(
-    Condition("A"),
-    OrCondition(
-        Condition("B"),
-        Condition("A")
+fun main() {
+    // Define condition "A && (B || A)"
+    val condition = AndCondition(
+        Condition("A"),
+        OrCondition(
+            Condition("B"),
+            Condition("A"),
+        )
     )
-)
-println(condition) // A && (B || A)
-// Оптимизируем
-val simpled = simpler.simplify(condition)
-println(simpled) // A
-
-
-// Или можно создать вызовами методов
-val condition2 = Condition("A").and(
-    Condition("B").or(
-        Condition("A")
-    )
-)
-println(condition2) // A && (B || A)
-// Оптимизируем
-val simpled2 = simpler.simplify(condition2)
-println(simpled2) // A
+    println(condition.toString()) // (A && (B || A))
+    
+    // Create instance SimplerBooleanExpression 
+    val simpler = SimplerBooleanExpression()
+    // Make easier
+    val simpled = simpler.simplify(condition)
+    println(simpled.toString()) // A
+}
 
 ```
 
-TODO: Добавить пример с имплементацией
+For example with using methods: 
 
-TODO: Опубликовать в Maven и NPM
+```kotlin
+import org.expressions.SimplerBooleanExpression
+import org.expressions.impl.*
 
-TODO: Сделать документацию и опубликовать в pages с рабочим примером на js
+// A && (B || A) -> A
+fun main() {
+    // Define condition "A && (B || A)"
+    val condition = Condition("A").and(Condition("B").or(Condition("A")))
+    println(condition.toString()) // (A && (B || A))
+    
+    // Create instance SimplerBooleanExpression 
+    val simpler = SimplerBooleanExpression()
+    // Make easier
+    val simpled = simpler.simplify(condition)
+    println(simpled.toString()) // A
+}
+```
 
-TODO: Перевести на английский
 
-TODO: Добавить возможность сериализовать (не уверен что нужно)
 
-TODO: Однако generic не нужен 
+### Custom conditions 
+
+If you want use custom conditions, you need implement interface [SimplifiedCondition](src/commonMain/kotlin/org/expressions/SimplifiedCondition.kt) and then you will could use [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) similary first code examples.
+
+
+
+### TODO
+
+- Publish to maven central and npm
+- Make html with parse string condition and make it easier

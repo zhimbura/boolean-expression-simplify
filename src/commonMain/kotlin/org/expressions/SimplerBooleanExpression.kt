@@ -4,6 +4,9 @@ import org.expressions.impl.AlwaysFalseCondition
 import org.expressions.impl.AlwaysTrueCondition
 import kotlin.math.pow
 
+/**
+ * The main class that implements the expression simplification logic
+ * */
 class SimplerBooleanExpression {
     private fun Int.toBoolean() = this != 0
     private fun Boolean.toInt() = if (this) 1 else 0
@@ -20,9 +23,12 @@ class SimplerBooleanExpression {
     /**
      * Make simpled condition if it is possible
      * @param condition difficult composition condition
-     * example
-     * [condition] = (A || B || !B) && A
-     * return => A
+     *
+     * Example
+     *
+     * input: (A || B || !B) && A
+     *
+     * return: A
      * */
     fun <T> simplify(condition: SimplifiedCondition<T>): SimplifiedCondition<T>? {
         val uniqCandidates = condition.getAllCandidates().distinct()
@@ -40,7 +46,6 @@ class SimplerBooleanExpression {
             groups.size == 1 -> return transformToCondition(groups.values.first(), uniqCandidates)
         }
 
-        // После того как пересечения между группами найдены, оптимизируем каждый с каждым
         var filtered = getCrossGroups(groups.values)
         do {
             val newFiltered: ArrayList<List<Int>> = arrayListOf()
@@ -68,14 +73,25 @@ class SimplerBooleanExpression {
 
     /**
      * Make boolean table and check condition results by row
-     * @param condition - difficult composite condition (example A || B)
-     * @param conditions - simple operand (example [A, B])
-     * example
+     * @param condition difficult composite condition (example A || B)
+     * @param conditions uniq simple operands (example [A, B])
+     *
+     * Example
+     *
+     * input:
+     *
      * [condition] = A || B
-     * return =>
+     *
+     * [conditions] = [ A, B ]
+     *
+     * return => Map
+     *
      * 0, 0 => 0
+     *
      * 0, 1 => 1
+     *
      * 1, 0 => 1
+     *
      * 1, 1 => 1
      * */
     fun <T> getBooleanTable(

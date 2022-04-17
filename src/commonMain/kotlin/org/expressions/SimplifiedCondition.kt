@@ -2,38 +2,38 @@ package org.expressions
 
 
 /**
- * Интерфейс для возможности упрощения выражения
+ * Interface objects that can be simplified
  * */
 interface SimplifiedCondition<T> {
     /**
-     * Возвращает все базовые операнды условия
+     * Returns all base condition statements
      * */
     fun getAllCandidates(): List<SimplifiedCondition<T>>
 
     /**
-     * Возвращает значение установленное с помощью [setValue] с учетом всех условий
+     * Returns the value set with [setValue] depends on conditions
      * */
     fun isSatisfiedByValue(): Boolean
 
     /**
-     * Устанавливает значение, которое вернет [isSatisfiedByValue] в базовых операндах
-     * @param condition базовый операнд, подразумевается что значение будет установленно для всех операндов с одинаковым [hashCode]
-     * @param value значение
+     * Sets the value that [isSatisfiedByValue] will return to the base operands
+     * @param condition base operand, it is assumed that the value will be set for all operands with the same [hashCode]
+     * @param value value to be set
      * */
     fun setValue(condition: SimplifiedCondition<T>, value: Boolean)
 
     /**
-     * Создает объединяющий операнд по признаку ИЛИ
+     * Creates a concatenating operand based on OR
      * */
     fun or(conditions: SimplifiedCondition<T>): SimplifiedCondition<T>
 
     /**
-     * Создает объединяющий операнд по признаку И
+     * Creates a concatenating operand based on AND
      * */
     fun and(conditions: SimplifiedCondition<T>): SimplifiedCondition<T>
 
     /**
-     * Создает инвертирующий операнд
+     * Creates an inverting operand
      * */
     fun not(): SimplifiedCondition<T>
 }
