@@ -65,7 +65,7 @@ If you want to use custom conditions, you need implement interface [SimplifiedCo
 
 ---
 
-### Build
+## Build
 
 #### Build JVM
 
@@ -87,23 +87,24 @@ Then go to `build/libs` for take *.jar
 
 ---
 
-### Test
+## Test
 
 Run tests and generate coverage.
 
 ```bash
 ./gradlew koverReport
 ```
+Watch coverage go to `build/reports/kover/html/index.html`
 
 ---
 
-### Documentation
+## Documentation
+
+Watch now https://tihon-ustinov.github.io/boolean-expression-siplify/
+
+### Build Documentation
 
 #### HTML
-
-Watch coverage go to `build/reports/kover/html/index.html`
-
-### Build documentation
 
 If you want HTML documentation
 
