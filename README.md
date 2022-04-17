@@ -8,7 +8,7 @@ Multiplatform library witch can make the expression easier. This library can be 
 
 ### Classes 
 
-You can use exist classes in  [org.expressions.impl](src/commonMain/kotlin/org/expressions/impl) for create condition and [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) for doing simle your condition.
+You can use exist classes in  [org.expressions.impl](src/commonMain/kotlin/org/expressions/impl) for create condition and [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) for doing simple your condition.
 
 For example with using constructor:
 
@@ -61,11 +61,64 @@ fun main() {
 
 ### Custom conditions 
 
-If you want use custom conditions, you need implement interface [SimplifiedCondition](src/commonMain/kotlin/org/expressions/SimplifiedCondition.kt) and then you will could use [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) similary first code examples.
+If you want to use custom conditions, you need implement interface [SimplifiedCondition,](src/commonMain/kotlin/org/expressions/SimplifiedCondition.kt) and then you could use [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) similarly first code examples.
 
+### Build
+
+#### Build JVM
+
+Run bash
+
+```bash
+./gradlew jvmJar
+```
+
+Then go to `build/libs` for take *.jar
+
+#### Build JS
+
+// TODO add implements with using array
+
+#### Build Swift
+
+// TODO add implements with using macOS
+
+### Test
+
+Run tests and generate coverage.
+
+```bash
+./gradlew koverReport
+```
+
+#### HTML
+
+Watch coverage go to `build/reports/kover/html/index.html`
+
+### Build documentation
+
+If you want HTML documentation
+
+```bash
+./gradlew dokkaHtml
+```
+
+Then go to `build/dokka/html/index.html`
+
+#### Markdown
+
+If you want Markdown documentation
+
+```bash
+./gradlew dokkaGfm
+```
+
+Then go to `build/dokka/gfm/index.md`
 
 
 ### TODO
 
+- Add implements with using array
+- Add implements with using macOS
 - Publish to maven central and npm
 - Make html with parse string condition and make it easier
