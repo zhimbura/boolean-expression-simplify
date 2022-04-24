@@ -1,5 +1,7 @@
 plugins {
     kotlin("multiplatform") version "1.6.20"
+    id("org.jetbrains.dokka") version "1.5.0"
+    id("org.jetbrains.kotlinx.kover") version "0.5.0"
 }
 
 group = "org.boolean"
@@ -8,6 +10,26 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
 }
+
+/**-------------------- kover --------------------*/
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlinx:kover:0.5.0-RC2")
+    }
+}
+apply(plugin = "kover")
+kover {
+    coverageEngine.set(kotlinx.kover.api.CoverageEngine.JACOCO)
+    intellijEngineVersion.set("1.0.614")
+    jacocoEngineVersion.set("0.8.7")
+}
+
+/**-------------------- dokka --------------------*/
+apply(plugin = "org.jetbrains.dokka")
+
 
 kotlin {
     jvm {

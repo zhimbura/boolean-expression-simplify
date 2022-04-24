@@ -1,8 +1,8 @@
 package tests
 
-import expressions.dto.AndCondition
-import expressions.dto.Condition
-import expressions.dto.OrCondition
+import org.expressions.impl.AndCondition
+import org.expressions.impl.Condition
+import org.expressions.impl.OrCondition
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

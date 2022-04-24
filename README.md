@@ -1,48 +1,134 @@
-# boolean-expression-siplify
+# Minimizer of Boolean Algebra Functions
 
-Мультиплатформенная библиотека позволяющая оптимизировать логические выражения
+## Description
 
-Пример использования
+Multiplatform library witch can make the expression easier. This library can be used on JVM, JS, Swift.
+
+## How use it
+
+### Classes 
+
+You can use exist classes in  [org.expressions.impl](src/commonMain/kotlin/org/expressions/impl) for create condition and [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) for doing simple your condition.
+
+For example with using constructor:
 
 ```kotlin
-import expressions.SimplerBooleanExpression
-import expressions.dto.*
-
-val simpler = SimplerBooleanExpression()
+import org.expressions.SimplerBooleanExpression
+import org.expressions.impl.*
 
 // A && (B || A) -> A
-val condition = AndCondition(
-    Condition("A"),
-    OrCondition(
-        Condition("B"),
-        Condition("A")
+fun main() {
+    // Define condition "A && (B || A)"
+    val condition = AndCondition(
+        Condition("A"),
+        OrCondition(
+            Condition("B"),
+            Condition("A"),
+        )
     )
-)
-println(condition) // A && (B || A)
-// Оптимизируем
-val simpled = simpler.simplify(condition)
-println(simpled) // A
-
-
-// Или можно создать вызовами методов
-val condition2 = Condition("A").and(
-    Condition("B").or(
-        Condition("A")
-    )
-)
-println(condition2) // A && (B || A)
-// Оптимизируем
-val simpled2 = simpler.simplify(condition2)
-println(simpled2) // A
+    println(condition.toString()) // (A && (B || A))
+    
+    // Create instance SimplerBooleanExpression 
+    val simpler = SimplerBooleanExpression()
+    // Make easier
+    val simpled = simpler.simplify(condition)
+    println(simpled.toString()) // A
+}
 
 ```
 
-TODO: Опубликовать в Maven и NPM
+For example with using methods: 
 
-TODO: Причесать код
+```kotlin
+import org.expressions.SimplerBooleanExpression
+import org.expressions.impl.*
 
-TODO: Перевести на английский
+// A && (B || A) -> A
+fun main() {
+    // Define condition "A && (B || A)"
+    val condition = Condition("A").and(Condition("B").or(Condition("A")))
+    println(condition.toString()) // (A && (B || A))
+    
+    // Create instance SimplerBooleanExpression 
+    val simpler = SimplerBooleanExpression()
+    // Make easier
+    val simpled = simpler.simplify(condition)
+    println(simpled.toString()) // A
+}
+```
 
-TODO: Переделать на Generic возможно
 
-TODO: Добавить возможность сериализовать
+
+### Custom conditions 
+
+If you want to use custom conditions, you need implement interface [SimplifiedCondition,](src/commonMain/kotlin/org/expressions/SimplifiedCondition.kt) and then you could use [SimplerBooleanExpression](src/commonMain/kotlin/org/expressions/SimplerBooleanExpression.kt) similarly first code examples.
+
+---
+
+## Build
+
+#### Build JVM
+
+Run bash
+
+```bash
+./gradlew jvmJar
+```
+
+Then go to `build/libs` for take *.jar
+
+#### Build JS
+
+// TODO add implements with using array
+
+#### Build Swift
+
+// TODO add implements with using macOS
+
+---
+
+## Test
+
+Run tests and generate coverage.
+
+```bash
+./gradlew koverReport
+```
+Watch coverage go to `build/reports/kover/html/index.html`
+
+---
+
+## Documentation
+
+Watch now https://tihon-ustinov.github.io/boolean-expression-siplify/
+
+### Build Documentation
+
+#### HTML
+
+If you want HTML documentation
+
+```bash
+./gradlew dokkaHtml
+```
+
+Then go to `build/dokka/html/index.html`
+
+#### Markdown
+
+If you want Markdown documentation
+
+```bash
+./gradlew dokkaGfm
+```
+
+Then go to `build/dokka/gfm/index.md`
+
+---
+
+### TODO
+
+- Add implements with using array
+- Add implements with using macOS
+- Publish to maven central and npm
+- Make html with parse string condition and make it easier

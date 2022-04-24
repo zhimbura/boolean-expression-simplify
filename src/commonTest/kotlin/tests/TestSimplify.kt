@@ -1,10 +1,19 @@
 package tests
 
-import expressions.SimplerBooleanExpression
-import expressions.dto.*
+import org.expressions.SimplerBooleanExpression
+import org.expressions.impl.*
 import kotlin.test.*
 
 class TestSimplify {
+
+    @Test
+    fun testEmptyCondition() {
+        val simpler = SimplerBooleanExpression()
+        val simpled = simpler.simplify(AndCondition<String>())
+        assertTrue {
+            simpled is AlwaysTrueCondition
+        }
+    }
 
     @Test
     fun testSimplifyNothing() {
@@ -78,6 +87,45 @@ class TestSimplify {
         assertTrue(simpled is AlwaysTrueCondition)
     }
 
+
+    @Test
+    fun testSimplifyCase5() {
+        // !(X1 && !X2) || X1 && X3 || X2 && X3 =>  (!X1 && !X2) || (!X1 && !X3)
+        val condition = OrCondition(
+            NotCondition(
+                AndCondition(
+                    Condition("X1"),
+                    NotCondition(Condition("X2"))
+                )
+            ),
+            AndCondition(
+                Condition("X1"),
+                Condition("X3"),
+            ),
+            AndCondition(
+                Condition("X2"),
+                Condition("X3"),
+            )
+        )
+        val simpler = SimplerBooleanExpression()
+        val simpled = simpler.simplify(condition)
+        assertEquals("((!X1 && !X2) || (!X1 && !X3))", simpled.toString())
+    }
+
+    @Test
+    fun testSimplifyCase6() {
+        // (X2 && !X3 || !(X1 && !X3)) && (!(X1 && !X2) || !X3 && X1 || !(X2 && !X3)) => ((!X2 && !X1) || (!X3 && !X1))
+        val x1 = Condition("X1")
+        val x2 = Condition("X2")
+        val x3 = Condition("X3")
+        val condition = x2.and(x3.not()).or(x1.and(x3.not()).not())
+            .and(x1.and(x2.not()).not().or(x3.not().and(x1).or(x2.and(x3.not()).not())))
+
+        val simpler = SimplerBooleanExpression()
+        val simpled = simpler.simplify(condition)
+        assertEquals("((!X2 && !X1) || (!X3 && !X1))", simpled.toString())
+    }
+
     @Test
     fun testBooleanTable() {
         // A && (B || C)
@@ -106,7 +154,5 @@ class TestSimplify {
             val row = key.joinToString("")
             assertEquals(correctTable[row], value)
         }
-
     }
-
 }
