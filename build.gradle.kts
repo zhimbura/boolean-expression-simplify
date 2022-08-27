@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.6.20"
+    kotlin("multiplatform") version "1.7.10"
     id("org.jetbrains.dokka") version "1.5.0"
     id("org.jetbrains.kotlinx.kover") version "0.5.0"
 }
@@ -42,6 +42,7 @@ kotlin {
         }
     }
     js(IR) {
+        binaries.executable()
         browser {
             commonWebpackConfig {
                 cssSupport.enabled = true

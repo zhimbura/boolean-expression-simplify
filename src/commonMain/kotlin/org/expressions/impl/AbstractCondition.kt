@@ -1,21 +1,23 @@
 package org.expressions.impl
 
-import org.expressions.SimplifiedCondition
+import org.expressions.ISimplifiedCondition
 
-abstract class AbstractCondition<T>(vararg conditions: SimplifiedCondition<T>) : SimplifiedCondition<T> {
-    protected val conditions: List<SimplifiedCondition<T>> = conditions.toList()
+abstract class AbstractCondition<T>(vararg conditions: ISimplifiedCondition<T>) : ISimplifiedCondition<T> {
+    protected val conditions: List<ISimplifiedCondition<T>> = conditions.toList()
+
+
 
     abstract override fun toString(): String
 
-    override fun or(conditions: SimplifiedCondition<T>): SimplifiedCondition<T> {
-        return OrCondition(this, conditions)
+    override fun or(condition: ISimplifiedCondition<T>): ISimplifiedCondition<T> {
+        return OrCondition(this, condition)
     }
 
-    override fun and(conditions: SimplifiedCondition<T>): SimplifiedCondition<T> {
-        return AndCondition(this, conditions)
+    override fun and(condition: ISimplifiedCondition<T>): ISimplifiedCondition<T> {
+        return AndCondition(this, condition)
     }
 
-    override fun not(): SimplifiedCondition<T> {
+    override fun not(): ISimplifiedCondition<T> {
         return NotCondition(this)
     }
 }

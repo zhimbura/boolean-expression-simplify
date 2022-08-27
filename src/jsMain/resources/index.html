@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make boolean expression easy</title>
+</head>
+<body>
+<label>Just write boolean expression</label><br>
+<input id="expression" title="&& - AND, || OR" placeholder="A && (B || A)" style="width: 500px"><br>
+<p id="result">result:</p><br>
+</body>
+<script src="./BooleanExpressionSimplify.js"></script>
+<script>
+    const package = window.BooleanExpressionSimplify.org.expressions
+    const { SimplerBooleanExpression } = package
+    const { ConditionParser } = package.impl.parser
+    const simplerBooleanExpression = new SimplerBooleanExpression()
+    const conditionParser = new ConditionParser()
+
+    document.getElementById("expression").addEventListener("keyup", () => {
+        try {
+            const expression = document.getElementById("expression").value
+            const condition = conditionParser.parse(expression)
+            const simpledCondition = simplerBooleanExpression.simplify(condition)
+            document.getElementById("result").innerText = `result: ${simpledCondition.toString()}`
+        } catch (e) {
+            document.getElementById("result").innerText = e.message
+        }
+    })
+</script>
+</html>

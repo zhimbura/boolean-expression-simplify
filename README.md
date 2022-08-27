@@ -79,6 +79,18 @@ Then go to `build/libs` for take *.jar
 
 #### Build JS
 
+You can run website and try parse boolean expressions fom string and see result optimization.
+
+![jsparser.png](images/jsparser.png)
+
+If you want it, you should run this bash command.
+
+```bash
+./gradlew jsBrowserDistribution
+```
+
+And after that open index.html from `build/distributions/`.
+
 // TODO add implements with using array
 
 #### Build Swift
