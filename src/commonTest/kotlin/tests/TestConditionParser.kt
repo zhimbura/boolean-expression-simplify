@@ -9,6 +9,7 @@ import org.expressions.impl.OrCondition
 import org.expressions.impl.parser.ConditionParser
 import org.expressions.impl.parser.Lexer
 import org.expressions.impl.parser.Token
+import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -28,6 +29,7 @@ class TestConditionParser {
     }
 
     @Test
+    @Ignore
     fun t() {
         val d = "(((((((((((((bb8eaa5c) && (39b92386)) && (3955f59e)) && (700d7963)) && (803f287e)) && (8364e022)) && (801fa354)) && (87c491e6)) && (8650588c)) && (b898229e)) && (9671ac2c)) && (deffc742)) && (defffe26)) && (40bb349)"
         val condition = ConditionParser().parse(d)
@@ -118,9 +120,30 @@ class TestConditionParser {
             input = "!(A) && (B)",
             condition = AndCondition(
                 NotCondition(
-                    Condition("A")
+                    Condition("A"),
                 ),
                 Condition("B")
+            )
+        )
+        case(
+            input = "!(A && B) && (B)",
+            condition = AndCondition(
+                NotCondition(
+                    AndCondition(
+                        Condition("A"),
+                        Condition("B"),
+                    )
+                ),
+                Condition("B")
+            )
+        )
+        case(
+            input = "!((A)&&(B))",
+            condition = NotCondition(
+                AndCondition(
+                    Condition("A"),
+                    Condition("B")
+                )
             )
         )
     }

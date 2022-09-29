@@ -15,7 +15,7 @@ class ConditionParser : IConditionParser {
         return parseToken(lexer)
     }
 
-    private fun parseToken(lexer: Lexer): ISimplifiedCondition<String> {
+    private fun parseToken(lexer: Lexer, parentToken:Token? = null): ISimplifiedCondition<String> {
         var token: Token?
         var condition: ISimplifiedCondition<String>? = null
         var operator: Token.IOperator? = null
@@ -33,7 +33,7 @@ class ConditionParser : IConditionParser {
                 }
                 is Token.NOT -> setCondition {
                     val nextCondition = when {
-                        lexer.nextIsBrakedSymbol() -> NotCondition(parseToken(lexer))
+                        lexer.nextIsBrakedSymbol() -> NotCondition(parseToken(lexer, Token.NOT))
                         else -> when (val nextToken = lexer.nextToken()) {
                             is Token.StringValue -> NotCondition(Condition(nextToken.value))
                             else -> throw ParseException()
@@ -46,7 +46,7 @@ class ConditionParser : IConditionParser {
                         val nextCondition = parseToken(lexer)
                         operator.joinElse(condition, nextCondition) { nextCondition }
                     }
-                    if (condition is Condition) {
+                    if (parentToken is Token.NOT) {
                         return condition ?: throw ParseException()
                     }
                 }
