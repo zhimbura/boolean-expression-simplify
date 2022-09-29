@@ -41,9 +41,14 @@ class ConditionParser : IConditionParser {
                     }
                     operator.joinElse(condition, nextCondition) { nextCondition }
                 }
-                Token.LBRACE -> setCondition {
-                    val nextCondition = parseToken(lexer)
-                    operator.joinElse(condition, nextCondition) { nextCondition }
+                Token.LBRACE -> {
+                    setCondition {
+                        val nextCondition = parseToken(lexer)
+                        operator.joinElse(condition, nextCondition) { nextCondition }
+                    }
+                    if (condition is Condition) {
+                        return condition ?: throw ParseException()
+                    }
                 }
                 Token.RBRACE -> return condition ?: throw ParseException()
             }

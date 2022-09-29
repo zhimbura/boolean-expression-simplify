@@ -28,6 +28,15 @@ class TestConditionParser {
     }
 
     @Test
+    fun t() {
+        val d = "(((((((((((((bb8eaa5c) && (39b92386)) && (3955f59e)) && (700d7963)) && (803f287e)) && (8364e022)) && (801fa354)) && (87c491e6)) && (8650588c)) && (b898229e)) && (9671ac2c)) && (deffc742)) && (defffe26)) && (40bb349)"
+        val condition = ConditionParser().parse(d)
+        val simplerBooleanExpression = SimplerBooleanExpression()
+        val simpl = simplerBooleanExpression.simplify(condition)
+        println("old $d\nnew ${simpl.toString()}")
+    }
+
+    @Test
     fun testParser() {
         case(
             input = "A && B",
@@ -103,6 +112,15 @@ class TestConditionParser {
                     Condition("A"),
                     Condition("B"),
                 )
+            )
+        )
+        case(
+            input = "!(A) && (B)",
+            condition = AndCondition(
+                NotCondition(
+                    Condition("A")
+                ),
+                Condition("B")
             )
         )
     }
