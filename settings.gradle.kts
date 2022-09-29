@@ -1,3 +1,3 @@
 
-rootProject.name = "BooleanExpressionSimplify"
+rootProject.name = "boolean-expression-simplify"
 

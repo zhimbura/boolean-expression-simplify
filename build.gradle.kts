@@ -2,10 +2,11 @@ plugins {
     kotlin("multiplatform") version "1.7.10"
     id("org.jetbrains.dokka") version "1.5.0"
     id("org.jetbrains.kotlinx.kover") version "0.5.0"
+    `maven-publish`
 }
 
 group = "org.boolean"
-version = "1.0-SNAPSHOT"
+version = "1.0.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -32,9 +33,24 @@ apply(plugin = "org.jetbrains.dokka")
 
 
 kotlin {
+    iosX64("iosX64") {
+        binaries {
+            framework {
+                baseName = "BooleanExpressionSimplify"
+            }
+        }
+    }
+
+    iosArm64("iosArm64") {
+        binaries {
+            framework {
+                baseName = "BooleanExpressionSimplify"
+            }
+        }
+    }
     jvm {
         compilations.all {
-            kotlinOptions.jvmTarget = "16"
+            kotlinOptions.jvmTarget = "1.8"
         }
         withJava()
         testRuns["test"].executionTask.configure {

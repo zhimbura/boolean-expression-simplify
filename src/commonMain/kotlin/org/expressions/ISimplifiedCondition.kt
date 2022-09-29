@@ -1,12 +1,17 @@
 package org.expressions
 
+import kotlin.js.JsExport
+import kotlin.js.JsName
+
 /**
  * Interface objects that can be simplified
  * */
+@JsExport
 interface ISimplifiedCondition<T> {
     /**
      * Returns all base condition statements
      * */
+    @JsName("getAllCandidates")
     fun getAllCandidates(): List<ISimplifiedCondition<T>>
 
     /**

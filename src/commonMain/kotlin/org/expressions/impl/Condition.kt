@@ -1,8 +1,14 @@
 package org.expressions.impl
 
 import org.expressions.ISimplifiedCondition
+import kotlin.js.JsExport
+import kotlin.js.JsName
 
-class Condition<T>(val item: T) : AbstractCondition<T>() {
+@JsExport
+class Condition<T>(
+    @property:JsName("item")
+    val item: T
+) : AbstractCondition<T>() {
     private var value: Boolean = false
 
     override fun getAllCandidates() = listOf(this)

@@ -1,7 +1,9 @@
 package org.expressions.impl
 
 import org.expressions.ISimplifiedCondition
+import kotlin.js.JsExport
 
+@JsExport
 class AndCondition<T>(vararg conditions: ISimplifiedCondition<T>) : AbstractCondition<T>(*conditions) {
 
     override fun getAllCandidates() = conditions.flatMap { it.getAllCandidates() }

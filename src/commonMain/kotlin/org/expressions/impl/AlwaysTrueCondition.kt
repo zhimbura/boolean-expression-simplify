@@ -1,7 +1,9 @@
 package org.expressions.impl
 
 import org.expressions.ISimplifiedCondition
+import kotlin.js.JsExport
 
+@JsExport
 class AlwaysTrueCondition<T> : AbstractCondition<T>() {
     override fun getAllCandidates() = emptyList<AbstractCondition<T>>()
 

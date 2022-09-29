@@ -1,6 +1,7 @@
 package tests
 
 import org.expressions.ISimplifiedCondition
+import org.expressions.SimplerBooleanExpression
 import org.expressions.impl.AndCondition
 import org.expressions.impl.Condition
 import org.expressions.impl.NotCondition
