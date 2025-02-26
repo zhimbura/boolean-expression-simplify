@@ -112,7 +112,7 @@ Watch coverage go to `build/reports/kover/html/index.html`
 
 ## Documentation
 
-Watch now [https://tihon-ustinov.github.io/boolean-expression-siplify/](https://tihon-ustinov.github.io/boolean-expression-simplify/)
+Watch now https://zhimbura.github.io/boolean-expression-simplify/
 
 ### Build Documentation
 
